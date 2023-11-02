@@ -99,7 +99,7 @@ cursor = conn.cursor()
 current_time = datetime.datetime.now()
 # Insert the data into the stock table
 cursor.executemany('''
-    INSERT INTO order (sku, qty, created_at)
+    INSERT INTO mc_order (sku, qty, created_at)
     VALUES (%s, %s, %s)
 ''', [(sku, qty, current_time) for sku, qty in data])
 
